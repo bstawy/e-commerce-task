@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class ProductsView extends StatefulWidget {
   static const String routeName = 'products-view';
+
   const ProductsView({super.key});
 
   @override
@@ -147,7 +148,7 @@ class _ProductsViewState extends State<ProductsView> {
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 8, left: 16, right: 16, bottom: 16),
+        padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
         child: Column(
           children: [
             Row(
@@ -167,7 +168,7 @@ class _ProductsViewState extends State<ProductsView> {
                     ),
                   ),
                   backgroundColor:
-                      const MaterialStatePropertyAll(Colors.transparent),
+                  const MaterialStatePropertyAll(Colors.transparent),
                   leading: Row(
                     children: [
                       const SizedBox(
@@ -206,7 +207,7 @@ class _ProductsViewState extends State<ProductsView> {
                 ),
                 itemBuilder: (context, index) => products[index],
                 itemCount: products.length,
-                padding: const EdgeInsets.only(top: 16),
+                padding: const EdgeInsets.symmetric(vertical: 16),
               ),
             ),
           ],

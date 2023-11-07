@@ -1,5 +1,4 @@
 import 'package:ecommerce/features/favorites/favorites_view.dart';
-import 'package:ecommerce/features/favorites/widgets/favorites_item.dart';
 import 'package:flutter/material.dart';
 
 import 'features/products/products_view.dart';
@@ -19,8 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: ProductsView.routeName,
       routes: {
-        ProductsView.routeName : (context) => ProductsView(),
-        FavoriteView.routeName : (context) => FavoriteView(),
+        ProductsView.routeName: (context) => const ProductsView(),
+        FavoriteView.routeName: (context) => const FavoriteView(),
       },
     );
   }

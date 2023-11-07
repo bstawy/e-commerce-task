@@ -29,10 +29,11 @@ class _ProductItemState extends State<ProductItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 190,
-      height: 600,
+      //width: 190,
+      //height: 600,
       decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xff004182).withOpacity(0.3),width: 2),
+        border: Border.all(
+            color: const Color(0xff004182).withOpacity(0.3), width: 2),
         borderRadius: BorderRadius.circular(15),
         color: Colors.white,
       ),
