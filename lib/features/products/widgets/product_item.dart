@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ProductItem extends StatefulWidget {
-  String title;
-  String description;
-  int? originalPrice;
-  int offeredPrice;
-  String imagePath;
-  double rating;
-  bool isFavourited;
+import '../../../models/product_model.dart';
 
-  ProductItem({
+class ProductItem extends StatefulWidget {
+  final ProductModel model;
+
+  const ProductItem({
     super.key,
-    required this.title,
-    required this.description,
-    required this.originalPrice,
-    required this.offeredPrice,
-    required this.imagePath,
-    required this.rating,
-    required this.isFavourited,
+    required this.model,
   });
 
   @override
@@ -25,15 +15,20 @@ class ProductItem extends StatefulWidget {
 }
 
 class _ProductItemState extends State<ProductItem> {
-
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
+    var width = mediaQuery.size.width;
+    var height = mediaQuery.size.height;
+    print('Width = $width');
+    print('Height = $height');
+
     return Container(
-      //width: 190,
-      //height: 600,
       decoration: BoxDecoration(
         border: Border.all(
-            color: const Color(0xff004182).withOpacity(0.3), width: 2),
+          color: const Color(0xff004182).withOpacity(0.3),
+          width: 2,
+        ),
         borderRadius: BorderRadius.circular(15),
         color: Colors.white,
       ),
@@ -42,8 +37,8 @@ class _ProductItemState extends State<ProductItem> {
           Stack(
             children: [
               Container(
-                width: 190,
-                height: 128,
+                width: width * 0.45,
+                height: height * 0.15, //128,
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(13),
@@ -51,7 +46,7 @@ class _ProductItemState extends State<ProductItem> {
                   ),
                   image: DecorationImage(
                     image: AssetImage(
-                      widget.imagePath,
+                      widget.model.imagePath,
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -62,11 +57,10 @@ class _ProductItemState extends State<ProductItem> {
                 right: 0,
                 child: GestureDetector(
                   onTap: () {
-                    widget.isFavourited = !widget.isFavourited;
-                    setState(() {
-                    });
+                    widget.model.isFavourited = !widget.model.isFavourited;
+                    setState(() {});
                   },
-                  child: Image.asset(widget.isFavourited == true
+                  child: Image.asset(widget.model.isFavourited == true
                       ? 'assets/images/fav_filled.png'
                       : 'assets/images/fav_button.png'),
                 ),
@@ -79,7 +73,7 @@ class _ProductItemState extends State<ProductItem> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.title,
+                  widget.model.title,
                   style: const TextStyle(
                     color: Color(0xff06004F),
                     fontSize: 14,
@@ -87,7 +81,7 @@ class _ProductItemState extends State<ProductItem> {
                   ),
                 ),
                 Text(
-                  widget.description,
+                  widget.model.description,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     color: Color(0xff06004F),
@@ -99,7 +93,7 @@ class _ProductItemState extends State<ProductItem> {
                 Row(
                   children: [
                     Text(
-                      'EGP ${widget.offeredPrice}',
+                      'EGP ${widget.model.offeredPrice}',
                       style: const TextStyle(
                         color: Color(0xff06004F),
                         fontSize: 14,
@@ -107,11 +101,11 @@ class _ProductItemState extends State<ProductItem> {
                       ),
                     ),
                     const SizedBox(width: 16),
-                    widget.originalPrice != null
+                    widget.model.originalPrice != null
                         ? Text(
-                            '${widget.originalPrice} EGP ',
+                      '${widget.model.originalPrice} EGP ',
                             style: TextStyle(
-                              color: const Color(0xff00418299).withOpacity(0.6),
+                              color: const Color(0xff004182).withOpacity(0.6),
                               fontSize: 11,
                               fontWeight: FontWeight.w400,
                               decoration: TextDecoration.lineThrough,
@@ -123,7 +117,7 @@ class _ProductItemState extends State<ProductItem> {
                 Row(
                   children: [
                     Text(
-                      'Review (${widget.rating})',
+                      'Review (${widget.model.rating})',
                       style: const TextStyle(
                         color: Color(0xff06004F),
                         fontSize: 12,

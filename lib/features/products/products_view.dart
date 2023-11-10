@@ -1,5 +1,6 @@
 import 'package:ecommerce/features/favorites/favorites_view.dart';
 import 'package:ecommerce/features/products/widgets/product_item.dart';
+import 'package:ecommerce/models/product_model.dart';
 import 'package:flutter/material.dart';
 
 class ProductsView extends StatefulWidget {
@@ -14,103 +15,125 @@ class ProductsView extends StatefulWidget {
 class _ProductsViewState extends State<ProductsView> {
   List<ProductItem> products = [
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 2000,
-      offeredPrice: 1200,
-      imagePath: 'assets/images/nike_shoes_01.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 2000,
+        offeredPrice: 1200,
+        imagePath: 'assets/images/nike_shoes_01.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 1500,
-      offeredPrice: 1100,
-      imagePath: 'assets/images/nike_shoes_02.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 1500,
+        offeredPrice: 1100,
+        imagePath: 'assets/images/nike_shoes_02.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 1300,
-      offeredPrice: 1000,
-      imagePath: 'assets/images/nike_shoes_03.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 1300,
+        offeredPrice: 1000,
+        imagePath: 'assets/images/nike_shoes_03.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 2000,
-      offeredPrice: 1500,
-      imagePath: 'assets/images/nike_shoes_04.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 2000,
+        offeredPrice: 1500,
+        imagePath: 'assets/images/nike_shoes_04.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 2100,
-      offeredPrice: 1800,
-      imagePath: 'assets/images/nike_shoes_05.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 2100,
+        offeredPrice: 1800,
+        imagePath: 'assets/images/nike_shoes_05.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 2000,
-      offeredPrice: 1200,
-      imagePath: 'assets/images/nike_shoes_06.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 2000,
+        offeredPrice: 1200,
+        imagePath: 'assets/images/nike_shoes_06.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 2000,
-      offeredPrice: 1200,
-      imagePath: 'assets/images/nike_shoes_01.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 2000,
+        offeredPrice: 1200,
+        imagePath: 'assets/images/nike_shoes_01.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 2000,
-      offeredPrice: 1200,
-      imagePath: 'assets/images/nike_shoes_02.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 2000,
+        offeredPrice: 1200,
+        imagePath: 'assets/images/nike_shoes_02.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 2000,
-      offeredPrice: 1200,
-      imagePath: 'assets/images/nike_shoes_03.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 2000,
+        offeredPrice: 1200,
+        imagePath: 'assets/images/nike_shoes_03.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 2000,
-      offeredPrice: 1200,
-      imagePath: 'assets/images/nike_shoes_04.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 2000,
+        offeredPrice: 1200,
+        imagePath: 'assets/images/nike_shoes_04.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
     ProductItem(
-      title: 'Nike Air Jordon',
-      description: 'Nike shoes flexible for women',
-      originalPrice: 2000,
-      offeredPrice: 1200,
-      imagePath: 'assets/images/nike_shoes_05.jpg',
-      rating: 4.6,
-      isFavourited: false,
+      model: ProductModel(
+        title: 'Nike Air Jordon',
+        description: 'Nike shoes flexible for women',
+        originalPrice: 2000,
+        offeredPrice: 1200,
+        imagePath: 'assets/images/nike_shoes_05.jpg',
+        rating: 4.6,
+        isFavourited: false,
+      ),
     ),
   ];
 
@@ -130,6 +153,9 @@ class _ProductsViewState extends State<ProductsView> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
+    var width = mediaQuery.size.width;
+    var height = mediaQuery.size.height;
     return Scaffold(
       appBar: AppBar(
         leading: Row(
@@ -155,10 +181,13 @@ class _ProductsViewState extends State<ProductsView> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SearchBar(
-                  onTap: () {},
+                  onChanged: (value) {
+                    searchController.text = value;
+                    print(searchController.text);
+                  },
                   elevation: const MaterialStatePropertyAll(0),
-                  constraints:
-                      const BoxConstraints(maxWidth: 300, minHeight: 50),
+                  constraints: BoxConstraints(
+                      maxWidth: width * 0.75, minHeight: height * 0.055),
                   shape: MaterialStatePropertyAll(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
@@ -168,7 +197,7 @@ class _ProductsViewState extends State<ProductsView> {
                     ),
                   ),
                   backgroundColor:
-                  const MaterialStatePropertyAll(Colors.transparent),
+                      const MaterialStatePropertyAll(Colors.transparent),
                   leading: Row(
                     children: [
                       const SizedBox(
@@ -201,7 +230,7 @@ class _ProductsViewState extends State<ProductsView> {
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 7 / 10,
+                  childAspectRatio: 7.5 / 10,
                   mainAxisSpacing: 16,
                   crossAxisSpacing: 16,
                 ),

@@ -1,5 +1,6 @@
 import 'package:ecommerce/features/favorites/widgets/favorites_item.dart';
 import 'package:ecommerce/features/products/products_view.dart';
+import 'package:ecommerce/models/favorite_model.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteView extends StatefulWidget {
@@ -11,32 +12,34 @@ class FavoriteView extends StatefulWidget {
 }
 
 class _FavoriteViewState extends State<FavoriteView> {
-  List<FavoriteItem> products = [
+  List<FavoriteItem> products = const [
     FavoriteItem(
-      title: 'Nike Air Jordan',
-      color: Colors.black,
-      imagePath: 'assets/images/nike_shoes_01.jpg',
-      offeredPrice: 1200,
-      originalPrice: 1500,
-
+      model: FavoriteModel(
+        title: 'Nike Air Jordan',
+        color: Colors.black,
+        imagePath: 'assets/images/nike_shoes_01.jpg',
+        offeredPrice: 1200,
+        originalPrice: 1500,
+      ),
     ),
     FavoriteItem(
-      title: 'Nike Air Jordan',
-      color: Colors.black,
-      imagePath: 'assets/images/nike_shoes_02.jpg',
-      offeredPrice: 1200,
-      originalPrice: 1500,
-
+      model: FavoriteModel(
+        title: 'Nike Air Jordan',
+        color: Colors.black,
+        imagePath: 'assets/images/nike_shoes_02.jpg',
+        offeredPrice: 1200,
+        originalPrice: 1500,
+      ),
     ),
     FavoriteItem(
-      title: 'Nike Air Jordan',
-      color: Colors.black,
-      imagePath: 'assets/images/nike_shoes_03.jpg',
-      offeredPrice: 1200,
-      originalPrice: 1500,
-
+      model: FavoriteModel(
+        title: 'Nike Air Jordan',
+        color: Colors.black,
+        imagePath: 'assets/images/nike_shoes_03.jpg',
+        offeredPrice: 1200,
+        originalPrice: 1500,
+      ),
     ),
-
   ];
 
   late TextEditingController searchController;
@@ -55,6 +58,10 @@ class _FavoriteViewState extends State<FavoriteView> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
+    var width = mediaQuery.size.width;
+    var height = mediaQuery.size.height;
+
     return Scaffold(
       appBar: AppBar(
         leading: Row(
@@ -80,10 +87,13 @@ class _FavoriteViewState extends State<FavoriteView> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SearchBar(
-                  onTap: () {},
+                  onChanged: (value) {
+                    searchController.text = value;
+                    print(searchController.text);
+                  },
                   elevation: const MaterialStatePropertyAll(0),
-                  constraints:
-                  const BoxConstraints(maxWidth: 300, minHeight: 50),
+                  constraints: BoxConstraints(
+                      maxWidth: width * 0.75, minHeight: height * 0.055),
                   shape: MaterialStatePropertyAll(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
@@ -93,7 +103,7 @@ class _FavoriteViewState extends State<FavoriteView> {
                     ),
                   ),
                   backgroundColor:
-                  const MaterialStatePropertyAll(Colors.transparent),
+                      const MaterialStatePropertyAll(Colors.transparent),
                   leading: Row(
                     children: [
                       const SizedBox(
@@ -127,7 +137,6 @@ class _FavoriteViewState extends State<FavoriteView> {
                 itemBuilder: (context, index) => products[index],
                 itemCount: products.length,
                 padding: const EdgeInsets.only(top: 16),
-
               ),
             ),
           ],
